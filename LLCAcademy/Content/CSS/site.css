@@ -1,0 +1,953 @@
+
+/* FONTS */
+
+@font-face {
+    font-family: 'Ailerons';
+    src: url('../Fonts/Ailerons.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Big Noodle Titling';
+    src: url('../Fonts/Big Noodle Titling.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Din Condensed Bold';
+    src: url('../Fonts/Din Condensed Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Intro';
+    src: url('../Fonts/Intro.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Route 159 Thin';
+    src: url('../Fonts/Route 159 Thin.otf') format('opentype');
+}
+
+/* GENERAL TAGS */
+
+h1, h2, h3 {
+    color: #18978A;
+    font-family: 'Din Condensed Bold';
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+p {
+    margin: 0;
+}
+
+body {
+    background-color: #1E1E1E;
+    text-align: center;
+    color: #EEEEEE;
+    font-family: 'Din Condensed Bold';
+    letter-spacing: 2px;
+    font-size: medium;
+    text-transform: uppercase;
+}
+
+.alt-colour {
+    color: #18978A;
+}
+
+.main-body {
+    font-family: 'Route 159 Thin';
+    text-transform: none;
+}
+
+.field-validation-error {
+    background-color: #E74C38;
+    padding: 2px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* LAYOUT PAGE */
+
+.logoRow {
+    display: flex;
+    align-items: center;
+}
+
+    .logoRow .social-icons {
+        padding: 0 15%;
+    }
+
+    .logoRow img {
+        max-height: 200px;
+        max-width: 100%;
+        padding: 1em;
+    }
+
+    .logoRow .logo {
+        flex: 1;
+    }
+
+    .logoRow .title {
+        font-size: xx-large;
+        margin: auto;
+        font-family: Ailerons;
+        flex: 2;
+    }
+
+        .logoRow .title .mobile-buttons {
+            display: none;
+        }
+
+        .logoRow .title p {
+            margin: 0;
+        }
+
+    .logoRow .contact {
+        flex: 1;
+        padding: 0.5em;
+    }
+
+    .logoRow ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .logoRow .social-icons li {
+        display: inline-block;
+    }
+
+    .logoRow ul li.phone {
+        font-size: xx-large;
+    }
+
+    .logoRow a {
+        color: #EEEEEE;
+    }
+
+        .logoRow a:hover {
+            text-decoration: none;
+        }
+
+.menuRow {
+    background-color: #1E1E1E;
+    z-index: 1 !important;
+}
+
+    .menuRow ul {
+        display: flex;
+        list-style: none;
+        line-height: 30px;
+        padding-left: 0;
+        margin: 0;
+    }
+
+        .menuRow ul li {
+            flex: 1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+            .menuRow ul li a {
+                color: #EEEEEE;
+                display: block;
+                padding: 0.5em;
+                font-size: medium;
+            }
+
+                .menuRow ul li a:hover, .menuRow ul li a:active, .menuRow ul li.active a {
+                    color: #18978A;
+                    font-weight: bold;
+                }
+
+.footer {
+    margin: auto;
+    text-align: center;
+    max-height: 200px;
+    height: 200px;
+    bottom: 0;
+    position: relative;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+    .footer ul {
+        list-style: none;
+        border-top: 3px solid #EEEEEE;
+        border-bottom: 3px solid #EEEEEE;
+        margin: auto;
+        padding: 0.75em;
+    }
+
+    .footer .footer-image, .footer .footer-contact {
+        max-height: 100px;
+        margin: 0.5em;
+    }
+
+    .footer img {
+        max-height: 100px;
+    }
+
+.social-icons img {
+    max-width: 35px;
+    padding: 0;
+}
+
+.social-icons {
+    display: flex;
+}
+
+    .social-icons li {
+        flex: 1;
+    }
+
+/* HOME PAGE */
+
+.home-page .bx-wrapper {
+    margin: 20px auto;
+    background-color: transparent;
+    border: 0;
+    box-shadow: 0 0;
+}
+
+    .home-page .bx-wrapper .bx-prev {
+        left: -75px;
+    }
+
+    .home-page .bx-wrapper .bx-next {
+        right: -75px;
+    }
+
+
+.home-page hr {
+    border-color: #18978A;
+    border-width: 3px;
+}
+
+.home-page .about-us-row {
+    display: flex;
+    align-items: center;
+}
+
+.home-page .about-section .about-us-row > .image-holder img {
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.home-page .about-section .about-us-row > .image-holder {
+    flex: 1;
+}
+
+.home-page .about-section .about-us-row div {
+    display: inline-block;
+    flex: 2;
+    padding: 0.5em;
+}
+
+.home-page .review-section .feedback-post p {
+    text-align: center;
+}
+
+.home-page .review-section .feedback-name p {
+    text-align: right;
+    font-style: italic;
+}
+
+.home-page .review-section .feedback-post {
+    width: 70%;
+    margin: 20px auto 20px auto;
+    padding-top: 10px;
+}
+
+/* SESSIONS PAGE */
+
+.sessions-page {
+    margin: auto;
+}
+
+    .sessions-page .session-holder {
+        display: flex;
+        justify-content: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 1em;
+    }
+
+        .sessions-page .session-holder div {
+            padding: 1.5em;
+        }
+
+        .sessions-page .session-holder .session-details {
+            width: 70%;
+            background-color: #EEEEEE;
+            font-weight: bold;
+            color: #1E1E1E;
+        }
+
+        .sessions-page .session-holder a {
+            background-color: #18978A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sessions-page .session-holder .session-address address {
+            margin-bottom: 0;
+        }
+
+        .sessions-page .session-holder a {
+            color: #EEEEEE;
+            text-decoration: none;
+        }
+
+/* SOCCER SCHOOLS PAGE */
+
+.soccer-school-page .download-link {
+    margin: 1em;
+}
+
+    .soccer-school-page .download-link div {
+        background-color: #E74C38;
+        display: block;
+        text-transform: uppercase;
+        font-size: large;
+        font-family: 'Din Condensed Bold';
+        padding: 1em;
+    }
+
+    .soccer-school-page .download-link a, .soccer-school-page .download-link a:hover, .soccer-school-page .download-link a:active {
+        color: #EEEEEE;
+        text-decoration: none;
+    }
+
+.soccer-school-page .school-holder {
+    display: flex;
+}
+
+    .soccer-school-page .school-holder .school-entry.christmas,
+    .soccer-school-page .school-holder .school-entry.christmas .school-name {
+        background-color: #D42426;
+        color: #FFFFFF;
+    }
+
+        .soccer-school-page .school-holder .school-entry.christmas .school-title {
+            background-color: #FFFFFF;
+            color: #378b29 !important;
+        }
+
+        .soccer-school-page .school-holder .school-entry.christmas p {
+            color: #FFFFFF;
+        }
+
+
+            .soccer-school-page .school-holder .school-entry.christmas p span {
+                color: #FFD700;
+            }
+
+        .soccer-school-page .school-holder .school-entry.christmas .school-info .download-link div {
+            background-color: #D42426;
+            border: 3px solid #FFF;
+            color: #FFF;
+        }
+
+    .soccer-school-page .school-holder .school-entry..christmas .school-name {
+        font-size: 0.9em;
+    }
+
+    .soccer-school-page .school-holder .school-entry.christmas .school-name:before {
+        content: "\f2dc";
+        font-family: FontAwesome;
+        color: #FFF;
+        display: inline-block;
+        text-align: center;
+        -webkit-animation-name: rotate;
+        -webkit-animation-duration: 3.5s;
+        -webkit-animation-iteration-count: infinite;
+    }
+
+    .soccer-school-page .school-holder .school-entry.christmas .school-name:after {
+        content: "\f2dc";
+        font-family: FontAwesome;
+        color: #FFF;
+        display: inline-block;
+        text-align: center;
+        -webkit-animation-name: rotate;
+        -webkit-animation-duration: 3.5s;
+        -webkit-animation-iteration-count: infinite;
+    }
+
+    .soccer-school-page .school-holder p {
+        flex: 1;
+    }
+
+    .soccer-school-page .school-holder .school-entry {
+        margin: 2em;
+        background-color: #EEEEEE;
+        flex: 1;
+        align-items: center;
+    }
+
+        .soccer-school-page .school-holder .school-entry p {
+            color: #1E1E1E;
+            padding: 0.5em 2em;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .soccer-school-page .school-holder .school-entry .school-name {
+            font-family: 'Din Condensed Bold';
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #1E1E1E;
+            background-color: #EEEEEE;
+            font-weight: bold;
+        }
+
+        .soccer-school-page .school-holder .school-entry .school-info {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .soccer-school-page .school-holder .school-entry .school-info > div {
+                flex: 1;
+            }
+
+        .soccer-school-page .school-holder .school-entry p span {
+            color: #18978A;
+        }
+
+    .soccer-school-page .school-holder .school-title {
+        width: 100%;
+        background-color: #18978A;
+        color: #EEEEEE !important;
+        font-family: 'Big Noodle Titling';
+    }
+
+.soccer-school-page .special-banner {
+    background-color: #EEEEEE;
+    margin: 2em 2em 0 2em;
+    color: #18978A;
+    text-transform: uppercase;
+    font-family: Big Noodle Titling;
+    padding: 0.5em;
+}
+
+    .soccer-school-page .special-banner p {
+        font-size: 20px;
+        letter-spacing: 2px;
+        margin: 0;
+    }
+
+        .soccer-school-page .special-banner p span {
+            color: #FF0000;
+            font-weight: bold;
+            padding: 1em;
+        }
+
+/* BIRTHDAY PARTIES PAGE */
+
+.alternative-services-page {
+    margin: auto;
+}
+
+    .alternative-services-page .party-holder {
+        display: flex;
+        justify-content: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 1em;
+    }
+
+        .alternative-services-page .party-holder .party-details {
+            background-color: #EEEEEE;
+            font-weight: bold;
+            color: #1E1E1E;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .alternative-services-page .party-holder .party-details ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+                .alternative-services-page .party-holder .party-details ul li {
+                    padding: 0.5em;
+                }
+
+        .alternative-services-page .party-holder .party-title {
+            color: #1E1E1E;
+            flex: 1;
+            font-family: 'Din Condensed Bold';
+            flex-direction: column;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 56px;
+        }
+
+            .alternative-services-page .party-holder .party-title div:first-of-type, .alternative-services-page .party-holder .party-title div:last-of-type {
+                font-size: medium;
+            }
+
+            .alternative-services-page .party-holder .party-title.gold {
+                background-color: #F39C12;
+            }
+
+            .alternative-services-page .party-holder .party-title.silver {
+                background-color: #BDC3C7;
+            }
+
+            .alternative-services-page .party-holder .party-title.bronze {
+                background-color: #965A38;
+            }
+
+/* FEEDBACK PAGE */
+
+.feedback-page .feedback-form {
+    margin: 20px auto 50px auto;
+    padding: 20px;
+    border: 3px solid #18978A;
+}
+
+    .feedback-page .feedback-form input, .feedback-form textarea {
+        width: 100%;
+        color: #1E1E1E;
+        text-align: center;
+    }
+
+    .feedback-page .feedback-form div:nth-child(even) {
+        padding-bottom: 20px;
+    }
+
+    .feedback-page .feedback-form input[type="submit"] {
+        color: #EEEEEE;
+        border: none;
+        padding: 5px;
+        background-color: #18978A;
+    }
+
+.feedback-page .feedback-post p {
+    text-align: center;
+}
+
+.feedback-page .feedback-name p {
+    text-align: right;
+    font-style: italic;
+}
+
+.feedback-page .feedback-post {
+    margin: 20px auto 20px auto;
+    padding-top: 10px;
+}
+
+/* CONTACT US PAGE */
+
+.contact-page .map-holder > div {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: #18978A;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.contact-page .map-holder iframe {
+    display: inline-block;
+    margin: auto;
+}
+
+.contact-page .map-holder address {
+    display: inline-block;
+    padding: 1em;
+    margin: 0;
+}
+
+.contact-page hr {
+    border-color: #18978A;
+    border-width: 3px;
+}
+
+/* MOBILE CSS */
+
+@media(max-width:780px) {
+
+    /* LAYOUT PAGE */
+
+    .footer ul {
+        width: 100%;
+    }
+
+    .menuRow ul {
+        flex-direction: column;
+    }
+
+    .menuRow.hide-menu {
+        display: none;
+    }
+
+    .logoRow {
+        flex-direction: column;
+        margin: 0 1em;
+    }
+
+        .logoRow .title {
+            font-size: 22px !important;
+            display: flex;
+            line-height: 50px;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+            .logoRow .title p {
+                width: 100%;
+                font-size: 26px;
+            }
+
+        .logoRow .logo {
+            display: none;
+        }
+
+        .logoRow .contact {
+            display: none;
+        }
+
+    .mobile-buttons {
+        display: flex !important;
+    }
+
+        .mobile-buttons div {
+            width: 50px;
+            height: 50px;
+            color: #18978a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: xx-large;
+        }
+
+    .menuRow {
+        margin: 0 1em;
+    }
+
+    /* HOME PAGE */
+
+    .home-page hr {
+        width: 80%;
+    }
+
+    .home-page .about-section .about-us-row {
+        flex-direction: column-reverse;
+        margin: 0 1em;
+    }
+
+    .home-page .bx-wrapper img {
+        max-width: 100%;
+        padding: 1em;
+    }
+
+    /* SESSIONS PAGE */
+
+    .sessions-page {
+        width: 90%;
+    }
+
+        .sessions-page .session-holder {
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .sessions-page .session-holder .session-details, .sessions-page .session-holder .session-address {
+                width: 100% !important;
+                padding: 1em;
+                justify-content: center;
+            }
+
+            .sessions-page .session-holder a {
+                width: 100%;
+            }
+
+    /* SOCCER SCHOOLS PAGE */
+
+    .soccer-school-page .special-banner p span {
+        display: block;
+    }
+
+    .soccer-school-page .school-holder {
+        flex-direction: column;
+    }
+
+        .soccer-school-page .school-holder .school-entry {
+            max-width: initial;
+        }
+
+            .soccer-school-page .school-holder .school-entry p {
+                font-size: small;
+            }
+
+        .soccer-school-page .school-holder .school-title {
+            font-size: large;
+            padding: 0.25em;
+        }
+
+        .soccer-school-page .school-holder .school-entry .school-name {
+            font-size: large;
+            padding: 0.5em;
+            letter-spacing: 2px;
+        }
+
+    .soccer-school-page .download-link div {
+        padding: 0.4em;
+        font-size: 0.8em;
+    }
+    /* BIRTHDAY PARTIES PAGE */
+
+    .alternative-services-page {
+        width: 90%;
+    }
+
+        .alternative-services-page .party-holder {
+            flex-direction: column;
+        }
+
+            .alternative-services-page .party-holder .party-title {
+                width: 100%;
+            }
+
+            .alternative-services-page .party-holder .party-details {
+                width: 100%;
+            }
+
+
+            .alternative-services-page .party-holder > div {
+                padding: 0.5em;
+            }
+
+    /* FEEDBACK PAGE */
+
+    .feedback-page {
+        width: 90%;
+        margin: auto;
+    }
+
+        .feedback-page .feedback-form {
+            width: 100%;
+        }
+
+        .feedback-page .feedback-post {
+            width: 100%;
+        }
+
+    /* CONTACT PAGE */
+
+    .contact-page {
+        width: 90%;
+        margin: auto;
+    }
+
+        .contact-page hr {
+            width: 100%;
+        }
+
+        .contact-page .map-holder > div {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .contact-page .map-holder iframe {
+            width: 100%;
+        }
+
+        .contact-page .map-holder address {
+            width: 100%;
+        }
+
+        .contact-page .contact-details p {
+            padding: 1em;
+        }
+
+        .contact-page .contact-details span {
+            display: block;
+        }
+}
+
+/* DESKTOP CSS */
+
+@media (min-width:780px) {
+
+    /* LAYOUT PAGE */
+
+    h1 {
+        margin-bottom: 40px;
+    }
+
+    .footer {
+        margin-top: 40px;
+    }
+
+        .footer ul {
+            width: 15%;
+        }
+
+    .logoRow {
+        height: 200px;
+    }
+
+    /* HOME PAGE */
+
+    .home-page hr {
+        width: 20%;
+    }
+
+    .home-page .about-section .about-us-row {
+        width: 70%;
+        margin: 1em auto;
+    }
+
+    .home-page .bx-wrapper img {
+        max-height: 240px;
+        max-width: 360px;
+    }
+
+    /* SESSIONS PAGE */
+
+    .sessions-page {
+        width: 70%;
+    }
+
+        .sessions-page .session-holder a {
+            width: 30%;
+        }
+
+    /* SOCCER SCHOOLS PAGE */
+
+    .soccer-school-page .school-holder .school-entry {
+        max-width: calc(50% - 4em);
+    }
+
+        .soccer-school-page .school-holder .school-entry p {
+            font-size: large;
+        }
+
+    .soccer-school-page .school-holder .school-title {
+        font-size: xx-large;
+    }
+
+    .soccer-school-page .school-holder .school-name {
+        font-size: xx-large;
+    }
+
+    /* BIRTHDAY PARTIES PAGE */
+
+    .alternative-services-page {
+        width: 70%;
+    }
+
+        .alternative-services-page .party-holder .party-title {
+            width: 30%;
+        }
+
+        .alternative-services-page .party-holder .party-details {
+            width: 70%;
+        }
+
+
+        .alternative-services-page .party-holder > div {
+            padding: 1em;
+        }
+
+    /* FEEDBACK PAGE */
+
+    .feedback-page .feedback-form {
+        width: 40%;
+    }
+
+    .feedback-page .feedback-post {
+        width: 70%;
+    }
+
+    /* CONTACT PAGE */
+
+    .contact-page hr {
+        width: 500px;
+    }
+
+    .contact-page .map-holder > div {
+        width: 70%;
+    }
+
+    .contact-page .map-holder iframe {
+        width: 70%;
+    }
+
+    .contact-page .map-holder address {
+        width: 30%;
+    }
+}
+
+/* SMALL MOBILE DEVICE CSS */
+
+@media(max-width:570px) {
+
+    /* LAYOUT PAGE */
+
+    .logoRow .title {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@keyframes snow {
+    0% {
+        background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+
+    50% {
+        background-position: 500px 500px, 100px 200px, -100px 150px;
+    }
+
+    100% {
+        background-position: 500px 1000px, 200px 400px, -100px 300px;
+    }
+}
+
+@-moz-keyframes snow {
+    0% {
+        background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+
+    50% {
+        background-position: 500px 500px, 100px 200px, -100px 150px;
+    }
+
+    100% {
+        background-position: 400px 1000px, 200px 400px, 100px 300px;
+    }
+}
+
+@-webkit-keyframes snow {
+    0% {
+        background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+
+    50% {
+        background-position: 500px 500px, 100px 200px, -100px 150px;
+    }
+
+    100% {
+        background-position: 500px 1000px, 200px 400px, -100px 300px;
+    }
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}

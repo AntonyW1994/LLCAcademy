@@ -1,0 +1,64 @@
+﻿@model List<LLCAcademy.Models.SoccerSchool>
+
+@{
+    ViewBag.Title = "Soccer Schools | LL Coaching Academy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.MetaDescription = "LL Coaching Academy runs soccer schools in most school holidays in the Ditton and East Malling area.  Contact us if you are interested.";
+}
+<div class="soccer-school-page">
+    <h1>- Soccer Schools -</h1>
+    @{
+        var currentItem = 0;
+    }
+
+    @if (DateTime.Today < new DateTime(2017, 07, 13))
+    {
+        <div class="special-banner">
+            <p><span>- SPECIAL OFFER -</span>Pre-book our July and both of our August Soccer Schools and save £20.  £130 for 15 days of training<span>- SPECIAL OFFER -</span></p>
+        </div>
+    }
+
+    <div class="school-holder">
+        @if (Model.Count > 0)
+        {
+            foreach (var school in Model)
+            {
+                currentItem++;
+                <div class="school-entry @school.CustomClass">
+                    <div class="school-name">
+                        <span>@school.Name</span>
+                    </div>
+                    <div class="school-title">
+                        <span>@LLCAcademy.Helpers.AddressHelper.GetAddressByID(school.AddressID).Line1</span>
+                    </div>
+                    <div class="school-info">
+                        <div><p class="school-dates"><span>@school.StartDate.Day@LLCAcademy.Helpers.DateHelper.GetDaySuffix(school.StartDate.Day)</span> @school.StartDate.ToString("MMMM") - <span>@school.EndDate.Day@LLCAcademy.Helpers.DateHelper.GetDaySuffix(school.EndDate.Day)</span> @school.EndDate.ToString("MMMM")</p></div>
+                        <div><p class="school-times"><span>@school.StartHour:00</span> to <span>@school.EndHour:00</span></p></div>
+
+                        @if (!string.IsNullOrWhiteSpace(school.SpecialText))
+                        {
+                            <div><p class="school-special">@Html.Raw(school.SpecialText)</p></div>
+                        }
+                        <div><p class="school-price"><span>@school.CostPerDay.ToString("£0.00")</span> per child (per day)</p></div>
+                        <div><p class="school-age">Open to <span>@school.MinAge</span> - <span>@school.MaxAge</span> year olds</p></div>
+                        <div class="download-link">
+                            <a href="/DownloadApplicationForm?file=@ViewBag.ApplicationFormPath">
+                                <div>
+                                    Download Application Form
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                if (currentItem % 2 == 0)
+                {
+                    @Html.Raw("</div><div class=\"school-holder\">")
+                }
+            }
+        }
+        else
+        {
+            <p>Sorry, there currently aren't any planned soccer schools.  Please check back soon.</p>
+        }
+    </div>
+</div>

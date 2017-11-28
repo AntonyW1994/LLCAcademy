@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Contact | LL Coaching Academy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.MetaDescription = "We are always available for contact by email here at LL Coaching Academy.  Alternatively you can give us a call during the day or contact us via Facebook or Twitter.";
+}
+<div class="contact-page">
+    <h1>- Details -</h1>
+    <div class="contact-details">
+        <p>Email: <span>llcoachingacademy@hotmail.com</span></p>
+        <p>Phone: <span>07523 973833</span></p>
+    </div>
+    <hr />
+    <h2>- Locations -</h2>
+    <div class="map-holder" id="map-holder">
+
+        @foreach (var address in ViewBag.Addresses)
+        {
+            <div>
+                <address>
+                    @address.Line1<br />
+                    @address.Line2<br />
+                    @address.Line3<br />
+                    @address.Town<br />
+                    @address.Postcode
+                </address>
+                <iframe src="@address.GoogleMapsUrl" width="600" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿@model List<LLCAcademy.Models.Session>
+
+@using System.Globalization;
+@{
+    ViewBag.Title = "Sessions | LL Coaching Academy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.MetaDescription = "Looking to have regular football training in the Ditton area?  Look no further than LL Coaching Academy, we will provide regular training sessions in the evening.";
+}
+
+<div class="sessions-page">
+    <h1>- Sessions -</h1>
+
+    @if (Model.Count > 0)
+    {
+        foreach (var session in Model)
+        {
+            <div class="session-holder">
+                <div class="session-details">
+                    <h2>@session.Name</h2>
+                    <p>@session.Description</p>
+                    <p><strong>@session.StartHour.ToString("00"):00 - @session.EndHour.ToString("00"):00</strong></p>
+                    <p>Every @CultureInfo.CurrentCulture.DateTimeFormat.DayNames[(int)session.DayOfWeek] @(((DateTime)(session.StartDate)).ToShortDateString()) - @(((DateTime)(session.EndDate)).ToShortDateString())</p>
+                    <p><strong>@session.Price.ToString("£0.00")</strong> per session</p>
+                    <p><strong>@session.SpecialPrice.ToString("£0.00")</strong> special price</p>
+                </div>
+                @{
+            var address = LLCAcademy.Helpers.AddressHelper.GetAddressByID(session.AddressID);
+                }
+                <a href="@Url.Action("Contact", "Home")#map-holder">
+                    <div class="session-address">
+                        <address>
+                            @address.Line1<br />
+                            @address.Line2<br />
+                            @address.Line3<br />
+                            @address.Town<br />
+                            @address.Postcode
+                        </address>
+                    </div>
+                </a>
+            </div>
+        }
+    }
+    else
+    {
+        <p>Sorry, there aren't currently any sessions running.  Check back soon to see if we have started any new sessions.</p>
+    }
+</div>
