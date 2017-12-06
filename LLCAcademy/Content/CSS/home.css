@@ -1,0 +1,125 @@
+﻿h1 {
+    font-size: 72px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.home-banner p {
+    font-size: 24px;
+}
+
+.home-banner {
+    padding: 100px 12.5%;
+    display: flex;
+    background-color: #169A8A;
+    color: #FFFFFF;
+    align-items: center;
+}
+
+    .home-banner > div {
+        flex: 1;
+    }
+
+        .home-banner > div:first-of-type {
+            padding: 0 100px 0 0;
+        }
+
+.home-main-content {
+    padding: 50px 12.5%;
+    display: flex;
+    background-color: #FFFFFF;
+    color: #000000;
+    align-items: center;
+    flex-direction: column;
+}
+
+    .home-main-content > div {
+        flex: 1;
+        display: flex;
+        background-color: #FFFFFF;
+        width: 100%;
+        margin: 1.5em 0;
+    }
+
+        .home-main-content > div:last-of-type {
+            flex-direction: column;
+            align-items: center;
+        }
+
+.grey-square {
+    flex: 1;
+    padding: 1em 2em;
+    min-height: 400px;
+    background-color: #F8F8F8;
+}
+
+.grey-square-header {
+    padding: 1em 0;
+}
+
+.home-main-content > div:first-of-type > div:first-of-type {
+    margin: 0 3em 0 0;
+}
+
+.home-main-content > div:first-of-type > div:last-of-type {
+    margin: 0 0 0 3em;
+}
+
+.party-image {
+    text-align: center;
+    padding: 3em 0;
+}
+
+.party-image img {
+    max-width: 250px;
+}
+
+.slider-holder {
+    padding: 0 5em;
+}
+
+.slide-pane {
+    height: 400px;
+    min-height: 400px;
+    background-color: #F8F8F8;
+}
+
+.slider-square {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.slider-square >div {
+    width: 100%;
+}
+
+.slider-content {
+    height: 340px;
+}
+
+.slider-button {
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.bx-wrapper {
+    max-width: 100%;
+    width: 100%;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+}
+
+    .bx-wrapper .bx-prev {
+        left: -70px;
+    }
+
+    .bx-wrapper .bx-next {
+        right: -70px;
+    }

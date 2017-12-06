@@ -192,13 +192,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\CSS\bootstrap.min.css" />
+    <Content Include="Content\CSS\buttons.css" />
+    <Content Include="Content\CSS\home.css" />
     <Content Include="Content\CSS\images\bx_loader.gif" />
     <Content Include="Content\CSS\images\controls.png" />
     <Content Include="Content\CSS\jquery.bxslider.min.css" />
+    <Content Include="Content\CSS\layout.css" />
     <Content Include="Content\CSS\site.css" />
     <Content Include="Content\CSS\sweetalert.css" />
     <Content Include="Content\Images\Facebook.png" />
     <Content Include="Content\Images\Home1.jpg" />
+    <Content Include="Content\Images\home\i-icon.png" />
+    <Content Include="Content\Images\home\party-icon.png" />
+    <Content Include="Content\Images\home\pitch-icon.png" />
+    <Content Include="Content\Images\home\speech-icon.png" />
     <Content Include="Content\Images\Instagram.png" />
     <Content Include="Content\Images\LLCoachingAcademyLogo.png" />
     <Content Include="Content\Images\Home2.JPG" />
@@ -215,13 +222,11 @@
     <Content Include="favicon.ico" />
     <Content Include="Content\Images\Twitter.png" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Fonts\Ailerons.otf" />
-    <Content Include="Content\Fonts\Big Noodle Titling.ttf" />
-    <Content Include="Content\Fonts\Din Condensed Bold.otf" />
-    <Content Include="Content\Fonts\Intro.otf" />
-    <Content Include="Content\Fonts\Route 159 Thin.otf" />
     <Content Include="Content\Documents\ApplicationForm.pdf" />
     <Content Include="Content\Documents\SessionForm.pdf" />
+    <Content Include="Content\Fonts\futur.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\1 AND 1.pubxml" />
     <None Include="Properties\PublishProfiles\Antony.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />

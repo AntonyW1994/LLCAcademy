@@ -4,53 +4,104 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.MetaDescription = "Welcome to LL Coaching Academy, please give us a call if you are interesed in sending your child to a soccer school in the Ditton area";
 }
+@section Head{
+    <link href="~/Content/CSS/home.css" rel="stylesheet" />
+}
+
 
 @model LLCAcademy.Models.Feedback
 
 <div class="home-page">
-    <ul class="bxslider">
-        <li><img src="~/Content/Images/Slideshow/Slideshow8.png" alt="Slideshow Image 1" /></li>
-        <li><img src="~/Content/Images/Slideshow/Slideshow4.jpg" alt="Slideshow Image 2" /></li>
-        <li><img src="~/Content/Images/Slideshow/Slideshow2.png" alt="Slideshow Image 3" /></li>
-        <li><img src="~/Content/Images/Slideshow/Slideshow3.jpg" alt="Slideshow Image 4" /></li>
-        <li><img src="~/Content/Images/Slideshow/Slideshow5.jpg" alt="Slideshow Image 5" /></li>
-        <li><img src="~/Content/Images/Slideshow/Slideshow1.png" alt="Slideshow Image 6" /></li>
-        <li><img src="~/Content/Images/Slideshow/Slideshow7.jpg" alt="Slideshow Image 7" /></li>
-        <li><img src="~/Content/Images/Slideshow/Slideshow6.jpg" alt="Slideshow Image 8" /></li>
-        <li><img src="~/Content/Images/Slideshow/Slideshow9.jpg" alt="Slideshow Image 9" /></li>
-    </ul>
+    <div class="home-banner">
+        <div>
+            <h1>Looking to book an event?</h1>
+            <p>We host training sessions for birthday parties, schools, events and much more.</p>
+            <a href="@Url.Action("alternativeservices", "Home")" class="btn btn-white">see more</a>
+        </div>
+        <div></div>
+    </div>
 
-    <h1>- About Us -</h1>
-    <div class="about-section">
-        <div class="about-us-row">
-            <div class="image-holder">
-                <img src="~/Content/Images/Home1.jpg" alt="Training Session" />
+    <div class="home-main-content">
+        <div>
+            <div class="grey-square">
+                <div class="grey-square-header">
+                    <h2>About</h2>
+                </div>
+                <p>Welcome to LL Coaching Academy website, we hope you find our website friendly and useful. LL Coaching Academy is a football coaching organisation based in Maidstone, Kent.</p>
+                <p>Our aim is to make a difference, provide fun sessions that will also help develop children's football technique, striving to help them progress.</p>
             </div>
-            <div><p>Welcome to LL Coaching Academy website, we hope you find our website friendly and useful.  LL Coaching Academy is a football coaching organisation based in Maidstone, Kent.  Our aim is to make a difference, provide fun sessions that will also help develop children's football technique, striving to help them progress.</p></div>
+
+            <div class="grey-square">
+                <div class="party-image">
+                    <img src="~/Content/Images/home/party-icon.png" />
+                </div>
+                <div class="grey-square-header center">
+                    <h2>Parties</h2>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div><h2>Sessions</h2></div>
+            <div class="slider-holder">
+                <div class="bxslider">
+                    <div class="slide-pane">
+                        <div class="slider-square">
+                            <div class="slider-content">
+                            </div>
+                            <div class="slider-button">
+                                <a href="https://www.llcoachingacademy.co.uk" class="btn btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-pane">
+                        <div class="slider-square">
+                            <div class="slider-content">
+                            </div>
+                            <div class="slider-button">
+                                <a href="https://www.llcoachingacademy.co.uk" class="btn btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-pane">
+                        <div class="slider-square">
+                            <div class="slider-content">
+                            </div>
+                            <div class="slider-button">
+                                <a href="https://www.llcoachingacademy.co.uk" class="btn btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-pane">
+                        <div class="slider-square">
+                            <div class="slider-content">
+                            </div>
+                            <div class="slider-button">
+                                <a href="https://www.llcoachingacademy.co.uk" class="btn btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-pane">
+                        <div class="slider-square">
+                            <div class="slider-content">
+                            </div>
+                            <div class="slider-button">
+                                <a href="https://www.llcoachingacademy.co.uk" class="btn btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-pane">
+                        <div class="slider-square">
+                            <div class="slider-content">
+                            </div>
+                            <div class="slider-button">
+                                <a href="https://www.llcoachingacademy.co.uk" class="btn btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <hr />
-    <div class="review-section">
-        <h2>- Reviews -</h2>
-        @if (ViewBag.Feedback != null && ViewBag.Feedback.Count > 0)
-        {
-            foreach (var feedback in ViewBag.Feedback)
-            {
-                <div class="feedback-post">
-                    @{
-                var cleansedFeedback = "<p>\"" + Regex.Replace(feedback.FeedbackText, @"\r\n?|\n", "</p><p>") + "\"</p>";
-                    }
-                    @Html.Raw(cleansedFeedback)
-                    <div class="feedback-name"><p>@feedback.FullName</p></div>
-                </div>
-            }
-        }
-        else
-        {
-            <div>Sorry, there hasn't been any feedback yet, please check back soon!</div>
-        }
-    </div>
-
 </div>
 
 <script>
@@ -67,11 +118,11 @@
             $('.bxslider').bxSlider({
                 minSlides: 3,
                 maxSlides: 3,
-                slideWidth: 360,
-                slideMargin: 10,
+                slideWidth: 1000,
+                slideMargin: 50,
                 pager: false,
                 auto: true,
-                controls: false
+                controls: true
             });
         } else {
             $('.bxslider').bxSlider({

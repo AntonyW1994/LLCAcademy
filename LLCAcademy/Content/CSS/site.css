@@ -1,29 +1,8 @@
 
 /* FONTS */
-
 @font-face {
-    font-family: 'Ailerons';
-    src: url('../Fonts/Ailerons.otf') format('opentype');
-}
-
-@font-face {
-    font-family: 'Big Noodle Titling';
-    src: url('../Fonts/Big Noodle Titling.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Din Condensed Bold';
-    src: url('../Fonts/Din Condensed Bold.otf') format('opentype');
-}
-
-@font-face {
-    font-family: 'Intro';
-    src: url('../Fonts/Intro.otf') format('opentype');
-}
-
-@font-face {
-    font-family: 'Route 159 Thin';
-    src: url('../Fonts/Route 159 Thin.otf') format('opentype');
+    font-family: 'futur';
+    src: url('../Fonts/futur.ttf') format('truetype');
 }
 
 /* GENERAL TAGS */
@@ -44,9 +23,7 @@ body {
     text-align: center;
     color: #EEEEEE;
     font-family: 'Din Condensed Bold';
-    letter-spacing: 2px;
-    font-size: medium;
-    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .alt-colour {
@@ -158,48 +135,6 @@ body {
                     font-weight: bold;
                 }
 
-.footer {
-    margin: auto;
-    text-align: center;
-    max-height: 200px;
-    height: 200px;
-    bottom: 0;
-    position: relative;
-    width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-}
-
-    .footer ul {
-        list-style: none;
-        border-top: 3px solid #EEEEEE;
-        border-bottom: 3px solid #EEEEEE;
-        margin: auto;
-        padding: 0.75em;
-    }
-
-    .footer .footer-image, .footer .footer-contact {
-        max-height: 100px;
-        margin: 0.5em;
-    }
-
-    .footer img {
-        max-height: 100px;
-    }
-
-.social-icons img {
-    max-width: 35px;
-    padding: 0;
-}
-
-.social-icons {
-    display: flex;
-}
-
-    .social-icons li {
-        flex: 1;
-    }
 
 /* HOME PAGE */
 
@@ -350,7 +285,7 @@ body {
             color: #FFF;
         }
 
-    .soccer-school-page .school-holder .school-entry..christmas .school-name {
+    .soccer-school-page .school-holder .school-entry.christmas .school-name {
         font-size: 0.9em;
     }
 
@@ -575,64 +510,6 @@ body {
 
 @media(max-width:780px) {
 
-    /* LAYOUT PAGE */
-
-    .footer ul {
-        width: 100%;
-    }
-
-    .menuRow ul {
-        flex-direction: column;
-    }
-
-    .menuRow.hide-menu {
-        display: none;
-    }
-
-    .logoRow {
-        flex-direction: column;
-        margin: 0 1em;
-    }
-
-        .logoRow .title {
-            font-size: 22px !important;
-            display: flex;
-            line-height: 50px;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-            .logoRow .title p {
-                width: 100%;
-                font-size: 26px;
-            }
-
-        .logoRow .logo {
-            display: none;
-        }
-
-        .logoRow .contact {
-            display: none;
-        }
-
-    .mobile-buttons {
-        display: flex !important;
-    }
-
-        .mobile-buttons div {
-            width: 50px;
-            height: 50px;
-            color: #18978a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: xx-large;
-        }
-
-    .menuRow {
-        margin: 0 1em;
-    }
-
     /* HOME PAGE */
 
     .home-page hr {
@@ -778,24 +655,6 @@ body {
 
 @media (min-width:780px) {
 
-    /* LAYOUT PAGE */
-
-    h1 {
-        margin-bottom: 40px;
-    }
-
-    .footer {
-        margin-top: 40px;
-    }
-
-        .footer ul {
-            width: 15%;
-        }
-
-    .logoRow {
-        height: 200px;
-    }
-
     /* HOME PAGE */
 
     .home-page hr {
@@ -900,51 +759,9 @@ body {
     }
 }
 
-@keyframes snow {
-    0% {
-        background-position: 0px 0px, 0px 0px, 0px 0px;
-    }
-
-    50% {
-        background-position: 500px 500px, 100px 200px, -100px 150px;
-    }
-
-    100% {
-        background-position: 500px 1000px, 200px 400px, -100px 300px;
-    }
-}
-
-@-moz-keyframes snow {
-    0% {
-        background-position: 0px 0px, 0px 0px, 0px 0px;
-    }
-
-    50% {
-        background-position: 500px 500px, 100px 200px, -100px 150px;
-    }
-
-    100% {
-        background-position: 400px 1000px, 200px 400px, 100px 300px;
-    }
-}
-
-@-webkit-keyframes snow {
-    0% {
-        background-position: 0px 0px, 0px 0px, 0px 0px;
-    }
-
-    50% {
-        background-position: 500px 500px, 100px 200px, -100px 150px;
-    }
-
-    100% {
-        background-position: 500px 1000px, 200px 400px, -100px 300px;
-    }
-}
-
 @-webkit-keyframes rotate {
     from {
-        -webkit-transform: rotate(0deg);
+        -webkit-transform: rotate(0);
     }
 
     to {

@@ -19,15 +19,16 @@
                 'gtm.start':
                 new Date().getTime(), event: 'gtm.js'
             }); var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-WWXNP97');</script>
     <!-- End Google Tag Manager -->
 
 
     <link href="~/Content/CSS/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/CSS/site.css?v=0.0002" rel="stylesheet" />
     <link href="~/Content/CSS/jquery.bxslider.min.css" rel="stylesheet" />
+    <link href="~/Content/CSS/buttons.css" rel="stylesheet" />
+    <link href="~/Content/CSS/layout.css" rel="stylesheet" />
 
     <script src="https://use.fontawesome.com/becadce269.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -42,93 +43,102 @@
     <meta property="og:image" content="http://www.llcoachingacademy.co.uk/Content/Images/LLCoachingAcademyLogoOG.png" />
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="200" />
-
     <meta name="robots" content="index,follow">
+    
+    @if (IsSectionDefined("Head"))
+    {
+        @RenderSection("Head", false)
+    }
 
     <title>@ViewBag.Title | Soccer School</title>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WWXNP97" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <header class="header">
-        <div class="logoRow">
-            <div class="logo">
-                <a href="@Url.Action("Index","Home")">
-                    <img src="~/Content/Images/LLCoachingAcademyLogo.png" alt="Logo" />
+
+    <header id="header">
+        <div class="main-menu">
+            <div class="logo-holder">
+                <a href="@Url.Action("Index", "Home")" class="no-underline">
+                    <img src="~/Content/Images/LLCoachingAcademyLogo.png" alt="LL Coaching Academy" />
+                    <span>LL Coaching Academy</span>
                 </a>
             </div>
-            <div class="title">
-                <p>LL Coaching <span class="alt-colour">Academy</span></p>
-                <div class="mobile-buttons">
-                    <a href="mailto:llcoachingacademy@hotmail.com"><div class="email-button"><i class="fa fa-envelope"></i></div></a>
-                    <a href="tel:07523973833"><div class="phone-button"><i class="fa fa-phone"></i></div></a>
-                    <div class="menu-button"><i class="fa fa-bars"></i></div>
-                </div>
-            </div>
-            <div class="contact">
+            <div class="button-holder">
                 <ul>
-                    <li>
-                        <ul class="social-icons">
-                            <li><a href="https://www.facebook.com/LLCAcademy" target="_blank"><img src="~/Content/Images/Facebook.png" alt="Facebook" /></a></li>
-                            <li><a href="https://twitter.com/llcacademy" target="_blank"><img src="~/Content/Images/Twitter.png" alt="Twitter" /></a></li>
-                            <li><a href="https://www.instagram.com/llcacademy/" target="_blank"><img src="~/Content/Images/Instagram.png" alt="Instagram" /></a></li>
-                        </ul>
-                    </li>
-                    <li class="phone"><a href="tel:07523973833">07523 973833</a></li>
-                    <li class="email"><a href="mailto:llcoachingacademy@hotmail.com">llcoachingacademy@hotmail.com</a></li>
+                    <li class="@(ViewBag.Title.StartsWith("Home") ? "active" : string.Empty)"><a href="@Url.Action("index", "Home")">Home</a></li>
+                    <li class="@(ViewBag.Title.StartsWith("Sessions") ? "active" : string.Empty)"><a href="@Url.Action("sessions", "Home")">Sessions</a></li>
+                    <li class="@(ViewBag.Title.StartsWith("Feedback") ? "active" : string.Empty)"><a href="@Url.Action("feedback", "Home")">Feedback</a></li>
+                    <li class="@(ViewBag.Title.StartsWith("Contact") ? "active" : string.Empty)"><a href="@Url.Action("contact", "Home")">Contact Us</a></li>
+                    <li class="@(ViewBag.Title.StartsWith("Book") ? "hidden" : string.Empty)"><a href="@Url.Action("contact", "Home")" class="btn btn-primary">Book Now</a></li>
                 </ul>
             </div>
         </div>
-        <div class="menuRow hide-menu" id="menuRow">
-            <ul>
-                <li class="@(ViewBag.Title.StartsWith("Home") ? "active" : string.Empty)"><a href="@Url.Action("index", "Home")">Home</a></li>
-                <li class="@(ViewBag.Title.StartsWith("Sessions") ? "active" : string.Empty)"><a href="@Url.Action("sessions", "Home")">Sessions</a></li>
-                <li class="@(ViewBag.Title.StartsWith("Soccer Schools") ? "active" : string.Empty)"><a href="@Url.Action("soccerschools", "Home")">Soccer Schools</a></li>
-                <li class="@(ViewBag.Title.StartsWith("Alternative Services") ? "active" : string.Empty)"><a href="@Url.Action("alternativeservices", "Home")">Birthday Parties</a></li>
-                <li class="@(ViewBag.Title.StartsWith("Feedback") ? "active" : string.Empty)"><a href="@Url.Action("feedback", "Home")">Feedback</a></li>
-                <li class="@(ViewBag.Title.StartsWith("Contact") ? "active" : string.Empty)"><a href="@Url.Action("contact", "Home")">Contact Us</a></li>
-            </ul>
-        </div>
+
     </header>
 
-    <div class="main-body">
+    <main>
         @RenderBody()
-    </div>
+    </main>
 
-    <footer class="footer">
-        <div class="footer-image">
-            <img src="~/Content/Images/LLCoachingAcademyLogo.png" alt="Logo" />
-        </div>
-        <div class="footer-contact">
-            <p>Where to find us</p>
-            <div>
+    <footer id="footer">
+        <div class="main-footer">
+            <div class="footer-links">
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="@Url.Action("sessions", "Home")">Sessions</a></li>
+                        <li><a href="@Url.Action("feedback", "Home")">Feedback</a></li>
+                        <li><a href="@Url.Action("contact", "Home")">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Social</h4>
+                    <ul>
+                        <li><a href="https://twitter.com/llcacademy">Twitter</a></li>
+                        <li><a href="https://www.facebook.com/LLCAcademy">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/llcacademy/">Instagram</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>LL Coaching Academy</li>
+                        <li><a class="no-underline " href="mailto:llcoachingacademy@hotmail.com">llcoachingacademy@hotmail.com</a></li>
+                        <li><a class="no-underline" href="tel:07523973833">07523 973833</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-social">
                 <ul class="social-icons">
-                    <li><a href="https://www.facebook.com/LLCAcademy" target="_blank"><img src="~/Content/Images/Facebook.png" alt="Facebook" /></a></li>
-                    <li><a href="https://twitter.com/llcacademy" target="_blank"><img src="~/Content/Images/Twitter.png" alt="Twitter" /></a></li>
-                    <li><a href="https://www.instagram.com/llcacademy/" target="_blank"><img src="~/Content/Images/Instagram.png" alt="Instagram" /></a></li>
+                    <li><a href="https://www.facebook.com/LLCAcademy" target="_blank"><img src="/Content/Images/Facebook.png" alt="Facebook"></a></li>
+                    <li><a href="https://twitter.com/llcacademy" target="_blank"><img src="/Content/Images/Twitter.png" alt="Twitter"></a></li>
+                    <li><a href="https://www.instagram.com/llcacademy/" target="_blank"><img src="/Content/Images/Instagram.png" alt="Instagram"></a></li>
                 </ul>
             </div>
+        </div>
 
+        <div class="signature-line">
+            <div><span>LL Coaching Academy</span></div>
+            <div><span>Website by Antony Willson</span></div>
         </div>
     </footer>
 </body>
 </html>
 
 <script>
-    $(function () {
-        $('.menu-button').click(function () {
-            if ($('#menuRow').hasClass('hide-menu')) {
-                $('#menuRow').removeClass('hide-menu');
-            } else {
-                $('#menuRow').addClass('hide-menu');
+        $(function () {
+            $('.menu-button').click(function () {
+                if ($('#menuRow').hasClass('hide-menu')) {
+                    $('#menuRow').removeClass('hide-menu');
+                } else {
+                    $('#menuRow').addClass('hide-menu');
+                }
+            });
+
+            if ($(window).width() > 780) {
+                $("#header").sticky({ topSpacing: 0 });
             }
         });
-
-        if ($(window).width() > 780) {
-            $("#menuRow").sticky({ topSpacing: 0 });
-        }
-    });
 </script>
